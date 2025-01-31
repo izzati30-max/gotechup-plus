@@ -86,5 +86,9 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
+        <div class="text-center mt-4 text-sm">
+            No Account? <a :href="route('register')" class="text-blue-700">Please Register.</a>
+        </div>
     </AuthenticationCard>
+
 </template>
