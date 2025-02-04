@@ -1,5 +1,4 @@
 <template>
-    <Head :title="title" />
     <div class="flex h-screen bg-gray-100">
       <!-- Sidebar -->
       <Sidebar :is-open="isSidebarOpen" />
@@ -23,14 +22,8 @@
 
   <script setup>
   import { ref } from 'vue'
-  import { Head } from '@inertiajs/vue3'
   import Navbar from "@/Components/NavBar.vue"
   import Sidebar from '@/components/Sidebar/Sidebar.vue'
-
-  defineProps({
-        title: String,
-    });
-
 
   const isSidebarOpen = ref(true)
   const userName = ref('John Doe')

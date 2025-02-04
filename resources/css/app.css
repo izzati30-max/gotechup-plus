@@ -5,3 +5,12 @@
 [x-cloak] {
     display: none;
 }
+
+.active-link {
+    @apply text-[#FDD201];
+  };
+
+
+.bg-primary{
+    @apply bg-[#FDD201];
+  }
