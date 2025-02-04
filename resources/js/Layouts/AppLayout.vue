@@ -24,7 +24,7 @@
   <script setup>
   import { ref } from 'vue'
   import { Head } from '@inertiajs/vue3'
-  import Navbar from "@/Components/NavBar.vue"
+  import Navbar from "@/Components/Navbar.vue"
   import Sidebar from '@/components/Sidebar/Sidebar.vue'
 
   defineProps({
