@@ -6,6 +6,26 @@
     display: none;
 }
 
+:root {
+    --primary: #FDD201;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .btn-primary {
+    @apply bg-[#FDD201] text-black font-semibold px-6 py-3 rounded-lg
+           hover:bg-[#e4bf01] transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#FDD201] text-black font-semibold px-6 py-3 rounded-lg
+           hover:bg-[#FDD201] hover:text-black transition-all duration-300;
+  }
+
 .active-link {
     @apply text-[#FDD201];
   };

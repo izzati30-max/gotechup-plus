@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+import Filters from '@/Components/Custom/Filters.vue';
 import { Head, Link, router, usePage } from "@inertiajs/vue3";
 
 import { ref, computed } from 'vue';
@@ -339,6 +340,8 @@ const filteredGames = computed(() => {
             </div>
         </div>
   </div>
+
+  <Filters></Filters>
 
 
     </AppLayout>
