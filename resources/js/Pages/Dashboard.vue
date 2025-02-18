@@ -131,7 +131,7 @@ const filteredGames = computed(() => {
 <template>
     <AppLayout title="Dashboard">
         <!-- Categories -->
-        <div class="max-w-7xl mx-auto px-4">
+        <!-- <div class="max-w-7xl mx-auto px-4">
             <div class="flex gap-4 overflow-x-auto py-3 scrollbar-hide">
             <button
                 v-for="category in categories"
@@ -147,10 +147,10 @@ const filteredGames = computed(() => {
                 {{ category }}
             </button>
             </div>
-        </div>
+        </div> -->
         <!-- Featured Game -->
     <div class="bg-white border-b rounded-lg">
-        <div class="max-w-7xl mx-auto px-4 py-6">
+        <div class="mx-auto px-4 py-6">
             <div class="relative rounded-xl overflow-hidden">
                 <img
                     src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
@@ -219,7 +219,7 @@ const filteredGames = computed(() => {
 
 
             <Filters></Filters>
-            
+
     <div class="space-y-6 mt-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white shadow rounded-lg p-6">
