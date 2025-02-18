@@ -7,6 +7,11 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import { router } from '@inertiajs/vue3';
+
+const redirectTo = () => {
+  router.visit('/register'); // Change '/register' to your desired route
+};
 
 defineProps({
     canResetPassword: Boolean,
@@ -69,7 +74,10 @@ const submit = () => {
             </div>
 
             <button type="submit" class="btn-primary w-full">
-              Sign In
+              Login
+            </button>
+            <button type="button" @click="redirectTo" class=" bg-transparent border border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 w-full">
+              Register
             </button>
           </form>
 

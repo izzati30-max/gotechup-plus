@@ -7,6 +7,11 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import { router } from '@inertiajs/vue3';
+
+const redirectTo = () => {
+  router.visit('/login'); // Change '/register' to your desired route
+};
 
 const form = useForm({
     name: '',
@@ -26,7 +31,85 @@ const submit = () => {
 <template>
     <Head title="Register" />
 
-    <AuthenticationCard>
+    <div class="min-h-screen bg-black flex items-center justify-center p-4">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 600 }"
+        class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl w-full max-w-md relative overflow-hidden"
+      >
+        <!-- Login Form -->
+        <div class="relative z-10">
+          <h2 class="text-3xl font-bold text-white mb-6">Register</h2>
+
+          <form @submit.prevent="submit" class="space-y-6">
+            <div>
+              <label class="block text-gray-300 mb-2">Name</label>
+              <input
+                v-model="form.name"
+                class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:border-primary outline-none"
+                placeholder="Enter your email"
+                autofocus
+                autocomplete="Full Name"
+              />
+              <InputError class="mt-2" :message="form.errors.name" />
+            </div>
+            <div>
+              <label class="block text-gray-300 mb-2">Email</label>
+              <input
+                v-model="form.email"
+                type="email"
+                class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:border-primary outline-none"
+                placeholder="Enter your email"
+                autofocus
+                autocomplete="username"
+              />
+              <InputError class="mt-2" :message="form.errors.email" />
+            </div>
+
+            <div>
+              <label class="block text-gray-300 mb-2">Password</label>
+              <input
+                v-model="form.password"
+                type="password"
+                class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:border-primary outline-none"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+              <InputError class="mt-2" :message="form.errors.password" />
+            </div>
+
+            <div>
+              <label class="block text-gray-300 mb-2">Conform Password</label>
+              <input
+                v-model="form.password_confirmation"
+                type="password"
+                class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white focus:border-primary outline-none"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+              <InputError class="mt-2" :message="form.errors.password_confirmation" />
+            </div>
+
+            <button type="submit" class="btn-primary w-full">
+              Register
+            </button>
+            <button type="button" @click="redirectTo" class=" bg-transparent border border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 w-full">
+              Login
+            </button>
+          </form>
+        </div>
+
+        <!-- Decorative Background -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#FDD201]/30 rounded-full blur-2xl"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-[#FDD201]/30 rounded-full blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
         </template>
@@ -108,5 +191,5 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-    </AuthenticationCard>
+    </AuthenticationCard> -->
 </template>

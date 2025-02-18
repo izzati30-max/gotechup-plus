@@ -217,6 +217,9 @@ const filteredGames = computed(() => {
 
             </div>
 
+
+            <Filters></Filters>
+            
     <div class="space-y-6 mt-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white shadow rounded-lg p-6">
@@ -340,8 +343,6 @@ const filteredGames = computed(() => {
             </div>
         </div>
   </div>
-
-  <Filters></Filters>
 
 
     </AppLayout>
