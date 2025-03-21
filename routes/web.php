@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\AwsUser;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
