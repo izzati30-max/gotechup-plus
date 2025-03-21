@@ -10,6 +10,10 @@ import { UserPlusIcon, DocumentCheckIcon, AcademicCapIcon, TrophyIcon } from '@h
 
 const page = usePage();
 
+const props = defineProps({
+    admin_count: Number,
+})
+
 const recentActivities = [
   {
     icon: UserPlusIcon,
@@ -175,7 +179,7 @@ const filteredGames = computed(() => {
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <div class="bg-blue-100 p-6 rounded-lg">
                         <h3 class="text-lg font-semibold text-blue-800">Sub Admin</h3>
-                        <p class="text-3xl font-bold text-blue-600">40</p>
+                        <p class="text-3xl font-bold text-blue-600">{{ props.admin_count }}</p>
                         </div>
                         <div class="bg-green-100 p-6 rounded-lg">
                         <h3 class="text-lg font-semibold text-green-800">Player Manager</h3>
