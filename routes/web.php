@@ -28,6 +28,9 @@ Route::middleware([
 
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard.index');
+        Route::get('/admin', 'admin')->name('dashboard.admin');
+        Route::get('/account', 'account')->name('dashboard.account');
+        Route::get('/app', 'app')->name('dashboard.app');
     });
 
     Route::get('/students', function () {

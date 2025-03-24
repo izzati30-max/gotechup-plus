@@ -20,6 +20,48 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function admin(Request $request)
+    {
+        $admin = DB::connection('aws')->table('AdminAccount')->get();
+
+        $result = [
+            'admin_count' => $admin
+        ];
+
+        // Return JSON for API requests, otherwise return Inertia response
+        return $request->is('api/*')
+            ? response()->json($result)
+            : Inertia::render('Dashboard', $result);
+    }
+
+    public function account(Request $request)
+    {
+        $account = DB::connection('aws')->table('Account')->get();
+
+        $result = [
+            'account' => $account
+        ];
+
+        // Return JSON for API requests, otherwise return Inertia response
+        return $request->is('api/*')
+            ? response()->json($result)
+            : Inertia::render('Dashboard', $result);
+    }
+
+    public function app(Request $request)
+    {
+        $app = DB::connection('aws')->table('AppId')->get();
+
+        $result = [
+            'appId' => $app
+        ];
+
+        // Return JSON for API requests, otherwise return Inertia response
+        return $request->is('api/*')
+            ? response()->json($result)
+            : Inertia::render('Dashboard', $result);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
